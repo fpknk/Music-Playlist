@@ -1,0 +1,83 @@
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 2px 50px gray;
+  overflow: scroll;
+  //Hide temporarily
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
+  h2 {
+    padding: 2rem;
+  }
+}
+
+.library-song {
+  img {
+    width: 30%;
+  }
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  //animation for color background
+  transition: background 0.2s ease;
+  //Hover color
+  &:hover {
+    background-color: rgba(189, 173, 173, 0.589);
+  }
+  //   justify-content: center;
+  //   flex-direction: column;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.song-description {
+  padding-left: 1rem;
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.7rem;
+  }
+}
+
+//Scrolbar effect
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(189, 173, 173) transparent;
+}
+
+//Manually add this extra (google chrome)
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(189, 173, 173);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.selected {
+  background: rgba(189, 173, 173, 0.589);
+}
+
+//Library animation
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
